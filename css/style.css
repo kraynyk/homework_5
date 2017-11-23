@@ -1,73 +1,76 @@
 body {
-  background-image: url(../img/background.jpg);
+  background-image: url("../img/background.png");
   background-repeat: no-repeat;
   background-position: top center;
 }
 
 .navigation {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.navigation ul li {
-  position: relative;
-  left: 35px;
-  display: inline-block;
-  padding-right: 60px;
+  width: 1020px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 100px auto;
   font-family: 'Pathway Gothic One', sans-serif;
   color: #fff;
   font-size: 170%;
 }
 
+.navigation ul li {
+  display: inline-block;
+}
+
+.navigation li:nth-child(4) {
+  position: relative;
+  font-family: 'Dorsa', sans-serif;
+  font-size: 250%;
+  color: #263555;
+}
+
+.navigation li:nth-child(4)::before {
+  z-index: -1;
+  position: absolute;
+  top: -27px;
+  left: -13px;
+  content: "";
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.about_item {
+  position: relative;
+}
+
 .submenu {
   display: none;
-  border-radius: 6px;
+  margin-top: 20px;
   position: absolute;
-  top: 40px;
-  left: -6px;
   width: 65px;
   height: 85px;
+  top: 15px;
+  left: -6px;
+  text-align: center;
+  color: #6b7488;
   background: #fff;
+  border-radius: 6px;
+  font-size: 80%;
+}
+
+.submenu li {
+  padding: 3px 0;
 }
 
 .submenu::before {
   position: absolute;
-    content: "";
-    display: inline-block;
-    top: -6px;
-    left: 25px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 8px 8px;
-    border-color: transparent transparent #fff transparent;
-}
-
-.submenu li:first-child {
-  position: relative;
-  left: 8px;
-  font-size: 80%;
-  padding-top: 5px;
-  color: #6b7488;
-}
-
-.submenu li:nth-child(2) {
-  position: relative;
-  left: 13px;
-  font-size: 80%;
-  padding-top: 5px;
-  color: #6b7488;
-}
-
-.submenu li:last-child {
-  position: relative;
-  left: 15px;
-  font-size: 80%;
-  padding-top: 5px;
-  color: #6b7488;
+  content: "";
+  top: -7px;
+  left: 25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #fff transparent;
 }
 
 .about_item:hover>.submenu {
@@ -78,98 +81,69 @@ body {
   color: #263555;
 }
 
-.navigation ul li:nth-child(4) {
-  position: relative;
-  top: 10px;
-  font-family: 'Dorsa', sans-serif;
-  font-size: 350%;
-  color: #263555;
-}
-
-.navigation ul li:nth-child(4)::before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  top: -34px;
-  left: -22px;
-  width: 120px;
-  height: 120px;
-  background: #fff;
-  border-radius: 50%;
-}
-
 .wrapper {
+  position: relative;
   width: 960px;
-  padding: 30px;
+  padding: 30px 30px 130px 30px;
   margin: 10px auto;
   background: #fff;
-}
-
-.top {
-  position: relative;
-  left: 940px;
-  top: 25px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #38afe5;
-  text-align: center;
-  line-height: 25px;
-}
-.top a,
-.top a:visited {
-  text-decoration: none;
-  color: #fff;
 }
 
 .slider {
   position: relative;
 }
 
-.slider img {
-  width: 960px;
-  height: 580px;
+.text_style,
+.text_style1 {
+  position: absolute;
+  font-family: 'Pathway Gothic One', sans-serif;
+  line-height: 60px;
+  text-align: center;
+  height: 60px;
 }
 
 .text_style {
-  position: absolute;
   top: 220px;
   width: 225px;
-  height: 60px;
   font-size: 140%;
   background: #fff;
   color: #263555;
-  font-family: 'Pathway Gothic One', sans-serif;
-  text-align: center;
-  line-height: 60px;
 }
 
 .text_style1 {
-  position: absolute;
   top: 280px;
   width: 275px;
-  height: 60px;
   font-size: 210%;
   background: #38afe5;
   color: #fff;
-  font-family: 'Pathway Gothic One', sans-serif;
-  text-align: center;
-  line-height: 60px;
 }
 
-.slider::before {
+.tack {
   position: absolute;
-  bottom: 35px;
-  left: 35px;
-  content: "\2190      \2192";
-  width: 70px;
-  height: 70px;
+  bottom: 40px;
+  left: 20px;
+  display: flex;
+  width: 90px;
+  height: 90px;
+  justify-content: space-evenly;
+  border-radius: 50%;
   background: #38afe5;
-  border-radius: 50px;
+  overflow: hidden;
+}
+
+.left,
+.right {
+  width: 50%;
+  height: 100%;
   text-align: center;
+  line-height: 90px;
   font-size: 150%;
   color: #fff;
-  line-height: 68px;
+}
+
+.left:hover,
+.right:hover {
+  background: #263555;
 }
 
 .destination h2 {
@@ -184,15 +158,24 @@ body {
   justify-content: space-around;
 }
 
-.flex img {
-  width: 290px;
-  height: 270px;
-}
-
 .card1,
 .card2,
 .card3 {
   position: relative;
+  width: 290px;
+  height: 270px;
+}
+
+.card1 {
+  background-image: url("../img/venice.png");
+}
+
+.card2 {
+  background-image: url("../img/usa.png");
+}
+
+.card3 {
+  background-image: url("../img/rome.png");
 }
 
 .flex h4 {
@@ -205,7 +188,6 @@ body {
 .description3 {
   display: none;
   position: absolute;
-  bottom: 3px;
   padding: 5px;
   font-family: 'Pathway Gothic One', sans-serif;
   width: 145px;
@@ -235,4 +217,22 @@ body {
 
 .card3:hover>.description3 {
   display: block;
+}
+
+.top {
+  width: 30px;
+  height: 30px;
+  bottom: 25px;
+  right: 35px;
+  background: #38afe5;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+}
+
+.top a,
+.top a:visited {
+  text-decoration: none;
+  color: #fff;
 }
